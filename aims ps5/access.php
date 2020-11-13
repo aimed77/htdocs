@@ -3,7 +3,7 @@
 $emailform=$_POST['courrier'];
 $mdpform=$_POST['mdp'];
 
-$pdo=new PDO('mysql:host=localhost;dbname=aimed','root','');
+$pdo=new PDO('mysql:host=localhost;dbname=test_aims','root','');
 $query=$pdo->query('SELECT * FROM leban');
 
 $resultat=$query->fetch(PDO::FETCH_ASSOC);
@@ -12,9 +12,9 @@ $emaildb = $resultat['courrier'];
 $mdpdb = $resultat['mdp'];
 
 if($emailform === $emaildb && $mdpform === $mdpdb){
-    header('location:access2.php');
+    header('location:index.php');
 }else{
-    header('location:index.html');
+    header('location:login.html');
 }
 
 ?> 
